@@ -91,13 +91,24 @@ You can also find numbers like 12345, or prices like $99.99.</textarea>
             </div>
         </div>
 
-        <div class="panel" style="margin-top: 1rem; background: #181825;">
-            <h3 style="margin-top: 0; color: var(--primary);">📖 How to use this</h3>
-            <ul style="color: #cdd6f4; line-height: 1.6; font-size: 0.95rem;">
-                <li><strong>Search Pattern:</strong> This box uses "Regular Expressions" (a secret code for finding text). You can just type normal words, or use the shortcuts above!</li>
-                <li><strong>Flags:</strong> Keep this as <code>g</code> to find <em>all</em> matches, or change it to <code>gi</code> to ignore uppercase/lowercase differences.</li>
-                <li><strong>Your Text:</strong> Paste whatever document, log, or paragraph you want to search through. The matches will light up instantly in green!</li>
-            </ul>
+        <div class="flex-row" style="margin-top: 1rem; gap: 1rem;">
+            <div class="panel" style="background: #181825; flex: 1;">
+                <h3 style="margin-top: 0; color: var(--primary);">📖 How to use this</h3>
+                <ul style="color: #cdd6f4; line-height: 1.6; font-size: 0.95rem;">
+                    <li><strong>Search Pattern:</strong> This box uses a secret code (Regex) to find text. You can type normal words, or click the shortcuts above!</li>
+                    <li><strong>Flags:</strong> Keep this as <code>g</code> to find <em>all</em> matches, or change it to <code>gi</code> to ignore uppercase/lowercase differences.</li>
+                    <li><strong>Your Text:</strong> Paste whatever document, log, or paragraph you want to search through. Matches light up instantly in green!</li>
+                </ul>
+            </div>
+
+            <div class="panel" style="background: #181825; flex: 1;">
+                <h3 style="margin-top: 0; color: var(--primary);">💡 Real Life Use Cases</h3>
+                <ul style="color: #cdd6f4; line-height: 1.6; font-size: 0.95rem;">
+                    <li><strong>Scraping Contacts:</strong> Paste a massive messy document and instantly highlight every single Email Address to copy them out.</li>
+                    <li><strong>Data Cleanup:</strong> Find all the improperly formatted phone numbers in a giant customer spreadsheet.</li>
+                    <li><strong>Security Check:</strong> Scan an entire log file for Credit Card numbers or passwords before sharing it with a colleague.</li>
+                </ul>
+            </div>
         </div>
     </div>
     
