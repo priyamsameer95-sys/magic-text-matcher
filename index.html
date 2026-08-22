@@ -50,35 +50,54 @@
 </head>
 <body>
     <div class="container">
-        <h1>RegexLive</h1>
+        <h1>✨ Magic Text Matcher</h1>
+        <p style="text-align: center; color: #a6adc8; margin-top: -1rem; margin-bottom: 2rem;">
+            A simple tool to find and highlight specific text patterns instantly.
+        </p>
+
         <div class="panel">
             <div class="input-group">
-                <label>Regular Expression</label>
+                <label>What are you looking for? (Search Pattern)</label>
                 <div class="flex-row">
-                    <input type="text" id="regex" value="([A-Z])\w+" placeholder="e.g. ([A-Z])\w+">
-                    <input type="text" id="flags" class="flags" value="g" placeholder="flags (g, i, m)">
+                    <input type="text" id="regex" value="[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}" placeholder="e.g. hello">
+                    <input type="text" id="flags" class="flags" value="g" placeholder="flags (g, i)">
                 </div>
-                <div id="error-msg" class="error">Invalid Regular Expression</div>
+                <div id="error-msg" class="error">Oops! That pattern isn't quite right.</div>
+                <div style="font-size: 0.85rem; color: #a6adc8; margin-top: 5px;">
+                    <em>Try these:</em> 
+                    <a href="#" onclick="document.getElementById('regex').value='[0-9]+'; updateHighlighting(); return false;" style="color: var(--primary);">Numbers</a> | 
+                    <a href="#" onclick="document.getElementById('regex').value='[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}'; updateHighlighting(); return false;" style="color: var(--primary);">Emails</a> | 
+                    <a href="#" onclick="document.getElementById('regex').value='https?:\\/\\/[^\\s]+'; updateHighlighting(); return false;" style="color: var(--primary);">Links</a>
+                </div>
             </div>
             
             <div class="input-group" style="margin-top: 2rem;">
-                <label>Test String</label>
+                <label>Your Text</label>
                 <div class="editor-container">
                     <div class="highlighter" id="highlighter"></div>
-                    <textarea id="test-string" spellcheck="false">Welcome to RegexLive! 
+                    <textarea id="test-string" spellcheck="false">Welcome to the Magic Text Matcher! 
 
-Here you can Test your expressions visually.
-Capture groups are highlighted uniquely:
-John Doe, Jane Smith.</textarea>
+Paste any text here, and the tool will automatically highlight the patterns you are looking for.
+
+For example, let's find some emails:
+Contact support at help@example.com or reach out to priyam@test.org.
+
+You can also find numbers like 12345, or prices like $99.99.</textarea>
                 </div>
             </div>
             
             <div class="legend">
-                <div class="legend-item"><div class="dot" style="background: var(--match)"></div> Full Match</div>
-                <div class="legend-item"><div class="dot" style="background: var(--g1)"></div> Group 1</div>
-                <div class="legend-item"><div class="dot" style="background: var(--g2)"></div> Group 2</div>
-                <div class="legend-item"><div class="dot" style="background: var(--g3)"></div> Group 3</div>
+                <div class="legend-item"><div class="dot" style="background: var(--match)"></div> Found Text</div>
             </div>
+        </div>
+
+        <div class="panel" style="margin-top: 1rem; background: #181825;">
+            <h3 style="margin-top: 0; color: var(--primary);">📖 How to use this</h3>
+            <ul style="color: #cdd6f4; line-height: 1.6; font-size: 0.95rem;">
+                <li><strong>Search Pattern:</strong> This box uses "Regular Expressions" (a secret code for finding text). You can just type normal words, or use the shortcuts above!</li>
+                <li><strong>Flags:</strong> Keep this as <code>g</code> to find <em>all</em> matches, or change it to <code>gi</code> to ignore uppercase/lowercase differences.</li>
+                <li><strong>Your Text:</strong> Paste whatever document, log, or paragraph you want to search through. The matches will light up instantly in green!</li>
+            </ul>
         </div>
     </div>
     
